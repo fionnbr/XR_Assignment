@@ -5,8 +5,10 @@
 [ext_resource type="Script" uid="uid://dpam5xwxbmwcv" path="res://hands/recieve_signals.gd" id="3_a0joh"]
 [ext_resource type="PackedScene" uid="uid://bo3p0qs3gk7ji" path="res://hands/analog.tscn" id="4_7x46j"]
 [ext_resource type="PackedScene" uid="uid://gv263vu7wvna" path="res://hands/godot_plushy.tscn" id="5_rno2n"]
+[ext_resource type="Shader" path="res://hands/wood.gdshader" id="6_2of5o"]
 [ext_resource type="Script" uid="uid://ox8smfnahvcm" path="res://hands/xr_camera_3d.gd" id="6_i4n1a"]
 [ext_resource type="Script" uid="uid://e0tg3ajyvad4" path="res://hands/hand.gd" id="7_2sspw"]
+[ext_resource type="Texture2D" uid="uid://b7k3sjlccht7c" path="res://assets/film1.jpg" id="7_a0joh"]
 [ext_resource type="Script" uid="uid://muj58x3jqroj" path="res://addons/hand_pose_detector/hand_pose_detector.gd" id="8_osuj2"]
 [ext_resource type="Resource" uid="uid://ckjd0xa2a240p" path="res://addons/hand_pose_detector/poses/standard_pose_set.tres" id="9_x7nt5"]
 [ext_resource type="Script" uid="uid://8qemx50ogm7m" path="res://addons/hand_pose_detector/hand_pose_controller.gd" id="10_g5fh6"]
@@ -18,6 +20,54 @@
 [ext_resource type="PackedScene" uid="uid://bnf6crykenhd2" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="16_n6pw6"]
 [ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="17_f4vkd"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="18_njldn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lids"]
+render_priority = 0
+shader = ExtResource("6_2of5o")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7x46j"]
+render_priority = 0
+shader = ExtResource("6_2of5o")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lids"]
+albedo_color = Color(0.21233967, 0.28997043, 0.7175999, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0mieg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mieg"]
+size = Vector3(0.13, 0.164, 0.008)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pefxg"]
+render_priority = 0
+shader = ExtResource("6_2of5o")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mieg"]
+render_priority = 0
+shader = ExtResource("6_2of5o")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
 
 [sub_resource type="Resource" id="Resource_c8e3v"]
 script = ExtResource("11_cvdvv")
@@ -250,6 +300,49 @@ horizontal_alignment = 1
 [node name="label3" parent="content" unique_id=989036658 instance=ExtResource("2_2of5o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3963589, 0.2808963, -0.49108338)
 text = "Godó HANDs"
+
+[node name="bookcase" type="CSGBox3D" parent="content" unique_id=1406930003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+size = Vector3(1.08, 0.8, 0.28)
+material = SubResource("ShaderMaterial_4lids")
+
+[node name="shelf" type="CSGBox3D" parent="content/bookcase" unique_id=1867203246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005156994, 0.2505157, 0.099993296)
+operation = 2
+size = Vector3(1, 0.2, 0.2)
+material = SubResource("ShaderMaterial_7x46j")
+
+[node name="dvd" type="Area3D" parent="content/bookcase/shelf" unique_id=1881481168]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="content/bookcase/shelf/dvd" unique_id=1320563924]
+transform = Transform3D(0.02, 0, 0, 0, 0.184, 0, 0, 0, 0.13, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4lids")
+mesh = SubResource("BoxMesh_0mieg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="content/bookcase/shelf/dvd" unique_id=1415198833]
+shape = SubResource("BoxShape3D_0mieg")
+
+[node name="cover" type="Sprite3D" parent="content/bookcase/shelf/dvd" unique_id=44304125]
+transform = Transform3D(-8.7422775e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.7422775e-10, 0.013, 0, 0)
+texture = ExtResource("7_a0joh")
+
+[node name="spine" type="Label3D" parent="content/bookcase/shelf/dvd" unique_id=1069446832]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0060715675, 0, 0.06699555)
+text = "Eraserhead"
+font_size = 5
+outline_size = 1
+
+[node name="shelf2" type="CSGBox3D" parent="content/bookcase" unique_id=1264491196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+operation = 2
+size = Vector3(1, 0.2, 0.2)
+material = SubResource("ShaderMaterial_pefxg")
+
+[node name="shelf3" type="CSGBox3D" parent="content/bookcase" unique_id=1444571400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0.1)
+operation = 2
+size = Vector3(1, 0.2, 0.2)
+material = SubResource("ShaderMaterial_0mieg")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=811185315]
 
