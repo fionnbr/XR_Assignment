@@ -5,25 +5,26 @@
 [ext_resource type="Script" uid="uid://dpam5xwxbmwcv" path="res://hands/recieve_signals.gd" id="3_a0joh"]
 [ext_resource type="PackedScene" uid="uid://bo3p0qs3gk7ji" path="res://hands/analog.tscn" id="4_7x46j"]
 [ext_resource type="PackedScene" uid="uid://gv263vu7wvna" path="res://hands/godot_plushy.tscn" id="5_rno2n"]
-[ext_resource type="Shader" path="res://hands/wood.gdshader" id="6_2of5o"]
+[ext_resource type="Shader" uid="uid://bl6dka4tbgqpp" path="res://assets/wood.gdshader" id="6_a0joh"]
 [ext_resource type="Script" uid="uid://ox8smfnahvcm" path="res://hands/xr_camera_3d.gd" id="6_i4n1a"]
 [ext_resource type="Script" uid="uid://e0tg3ajyvad4" path="res://hands/hand.gd" id="7_2sspw"]
 [ext_resource type="Texture2D" uid="uid://b7k3sjlccht7c" path="res://assets/film1.jpg" id="7_a0joh"]
+[ext_resource type="FontFile" uid="uid://bbsslqkaeryyq" path="res://fonts/Barlow-BoldItalic.ttf" id="8_7x46j"]
 [ext_resource type="Script" uid="uid://muj58x3jqroj" path="res://addons/hand_pose_detector/hand_pose_detector.gd" id="8_osuj2"]
 [ext_resource type="Resource" uid="uid://ckjd0xa2a240p" path="res://addons/hand_pose_detector/poses/standard_pose_set.tres" id="9_x7nt5"]
 [ext_resource type="Script" uid="uid://8qemx50ogm7m" path="res://addons/hand_pose_detector/hand_pose_controller.gd" id="10_g5fh6"]
 [ext_resource type="Script" uid="uid://by434t17106ou" path="res://addons/hand_pose_detector/hand_pose_action.gd" id="11_cvdvv"]
 [ext_resource type="Resource" uid="uid://dhbqusuodrl3r" path="res://addons/hand_pose_detector/poses/fist.tres" id="12_q0m23"]
 [ext_resource type="Script" uid="uid://cmyxeshkakwd8" path="res://addons/hand_pose_detector/hand_pose_action_map.gd" id="13_da44y"]
-[ext_resource type="PackedScene" uid="uid://pl71p2861rp8" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="14_180pi"]
+[ext_resource type="PackedScene" uid="uid://becmmd2yxuxwf" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="14_180pi"]
 [ext_resource type="PackedScene" uid="uid://cend6ikv2su2t" path="res://hands/tip.tscn" id="15_3gry1"]
-[ext_resource type="PackedScene" uid="uid://bnf6crykenhd2" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="16_n6pw6"]
+[ext_resource type="PackedScene" uid="uid://c23t6jhkmku1y" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="16_n6pw6"]
 [ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="17_f4vkd"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="18_njldn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lids"]
 render_priority = 0
-shader = ExtResource("6_2of5o")
+shader = ExtResource("6_a0joh")
 shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
 shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
 shader_parameter/ring_scale = 4.4
@@ -33,7 +34,7 @@ shader_parameter/noise_scale = 0.03
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7x46j"]
 render_priority = 0
-shader = ExtResource("6_2of5o")
+shader = ExtResource("6_a0joh")
 shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
 shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
 shader_parameter/ring_scale = 4.4
@@ -51,7 +52,7 @@ size = Vector3(0.13, 0.164, 0.008)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pefxg"]
 render_priority = 0
-shader = ExtResource("6_2of5o")
+shader = ExtResource("6_a0joh")
 shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
 shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
 shader_parameter/ring_scale = 4.4
@@ -61,7 +62,7 @@ shader_parameter/noise_scale = 0.03
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0mieg"]
 render_priority = 0
-shader = ExtResource("6_2of5o")
+shader = ExtResource("6_a0joh")
 shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
 shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
 shader_parameter/ring_scale = 4.4
@@ -265,44 +266,39 @@ horizontal_alignment = 1
 script = ExtResource("3_a0joh")
 
 [node name="analog" parent="content" unique_id=161052755 instance=ExtResource("4_7x46j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23705852, -0.0046572834, -0.49118236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.384338, -0.0046572834, -0.49118236)
 
 [node name="godot_plushy" parent="content" unique_id=1896223643 instance=ExtResource("5_rno2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019337118, 0.19271566, -0.49581215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9041696, 0.19271566, -0.47864187)
 
-[node name="on_off" parent="content" unique_id=1119412009 instance=ExtResource("1_246bf")]
+[node name="learn" parent="content" unique_id=1119412009 instance=ExtResource("1_246bf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35073173, 0, -0.48942775)
 
-[node name="toggle" parent="content" unique_id=393092532 instance=ExtResource("1_246bf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026131094, 0, -0.48065484)
-behavior = 1
+[node name="test" parent="content" unique_id=1686958216 instance=ExtResource("1_246bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020800903, 0, -0.49851513)
 
-[node name="label" parent="content" unique_id=427717679 instance=ExtResource("2_2of5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35123777, -0.052661713, -0.49143922)
-text = "Godó HANDs"
-horizontal_alignment = 1
+[node name="toggle" parent="content" unique_id=393092532 instance=ExtResource("1_246bf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7538369, 0, -0.48065484)
+behavior = 1
 
 [node name="label4" parent="content" unique_id=258155036 instance=ExtResource("2_2of5o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35123777, 0.06802264, -0.49143922)
-text = "ON/OFF"
+text = "LEARN"
 horizontal_alignment = 1
 
 [node name="label5" parent="content" unique_id=514401683 instance=ExtResource("2_2of5o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019355774, 0.06802264, -0.49143922)
-text = "TOGGLE"
-horizontal_alignment = 1
-
-[node name="label2" parent="content" unique_id=1649182291 instance=ExtResource("2_2of5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026083082, -0.05301775, -0.4913038)
-text = "Godó HANDs"
+text = "TEST
+"
 horizontal_alignment = 1
 
 [node name="label3" parent="content" unique_id=989036658 instance=ExtResource("2_2of5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3963589, 0.2808963, -0.49108338)
-text = "Godó HANDs"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28142488, 0.2808963, -0.49108338)
+text = "Found Footage"
+font_size = 66
 
 [node name="bookcase" type="CSGBox3D" parent="content" unique_id=1406930003]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+transform = Transform3D(-0.0039466955, 0, -0.9999922, 0, 1, 0, 0.9999922, 0, -0.0039466955, 1.3536892, 0, 0)
 size = Vector3(1.08, 0.8, 0.28)
 material = SubResource("ShaderMaterial_4lids")
 
@@ -329,6 +325,7 @@ texture = ExtResource("7_a0joh")
 [node name="spine" type="Label3D" parent="content/bookcase/shelf/dvd" unique_id=1069446832]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0060715675, 0, 0.06699555)
 text = "Eraserhead"
+font = ExtResource("8_7x46j")
 font_size = 5
 outline_size = 1
 
@@ -379,12 +376,12 @@ metadata/_custom_type_script = "uid://8qemx50ogm7m"
 
 [node name="LeftHandHumanoid2" parent="XROrigin3D/left" unique_id=1738900531 instance=ExtResource("14_180pi")]
 
-[node name="LeftHandHumanoidMesh" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" parent_id_path=PackedInt32Array(1738900531, 1078443342) index="0" unique_id=1900335707]
+[node name="LeftHandHumanoidMesh" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" parent_id_path=PackedInt32Array(1738900531, 1861102283) index="0" unique_id=517773186]
 surface_material_override/0 = SubResource("StandardMaterial3D_b7nf6")
 
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" parent_id_path=PackedInt32Array(1738900531, 1078443342) index="1" unique_id=269424477]
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" parent_id_path=PackedInt32Array(1738900531, 1861102283) index="1" unique_id=269424477]
 
-[node name="tip5" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" parent_id_path=PackedInt32Array(1738900531, 1078443342) index="2" unique_id=740102888 instance=ExtResource("15_3gry1")]
+[node name="tip5" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" parent_id_path=PackedInt32Array(1738900531, 1861102283) index="2" unique_id=740102888 instance=ExtResource("15_3gry1")]
 transform = Transform3D(0.01489234, 0.39270008, 0.919546, -0.9930924, 0.11285266, -0.03211129, -0.11638325, -0.91271573, 0.39166808, -0.01110013, 0.04294307, -0.17161417)
 bone_name = "LeftIndexTip"
 bone_idx = 9
@@ -415,7 +412,7 @@ metadata/_custom_type_script = "uid://8qemx50ogm7m"
 
 [node name="RightHandHumanoid2" parent="XROrigin3D/right" unique_id=1270115842 instance=ExtResource("16_n6pw6")]
 
-[node name="Skeleton3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid" parent_id_path=PackedInt32Array(1270115842, 614030873) index="0" unique_id=1973907809]
+[node name="Skeleton3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid" parent_id_path=PackedInt32Array(1270115842, 1134069103) index="0" unique_id=409790539]
 bones/0/position = Vector3(-0.009999533, 0.020026566, 3.5932288e-05)
 bones/0/rotation = Quaternion(0.15032642, 0.82222533, -0.41320056, -0.36140388)
 bones/0/scale = Vector3(0.99999976, 0.9999999, 0.9999999)
@@ -429,7 +426,7 @@ bones/13/scale = Vector3(1, 1.0000002, 1.0000001)
 [node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0" unique_id=514983887]
 hand_tracker = &"/user/hand_tracker/right"
 
-[node name="RightHandHumanoidMesh" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="1" unique_id=1527307748]
+[node name="RightHandHumanoidMesh" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="1" unique_id=666602817]
 surface_material_override/0 = SubResource("StandardMaterial3D_b7nf6")
 
 [node name="tip5" type="BoneAttachment3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="2" unique_id=732703088]
@@ -498,7 +495,7 @@ environment = SubResource("Environment_c4jos")
 
 [connection signal="value_changed" from="content/record" to="content/recieve_signals" method="_on_record_value_changed"]
 [connection signal="value_changed" from="content/play" to="content/recieve_signals" method="_on_play_value_changed"]
-[connection signal="value_changed" from="content/on_off" to="content/recieve_signals" method="_on_button_1_value_changed"]
+[connection signal="value_changed" from="content/learn" to="content/recieve_signals" method="_on_button_1_value_changed"]
 [connection signal="value_changed" from="content/toggle" to="content/recieve_signals" method="_on_button_2_value_changed"]
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
