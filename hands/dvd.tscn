@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://rs8qyy4yjwpy"]
+
+[ext_resource type="Texture2D" uid="uid://b7k3sjlccht7c" path="res://assets/film1.jpg" id="1_31wla"]
+[ext_resource type="FontFile" uid="uid://bbsslqkaeryyq" path="res://fonts/Barlow-BoldItalic.ttf" id="2_1nv6r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lids"]
+albedo_color = Color(0.21233967, 0.28997043, 0.7175999, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0mieg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0mieg"]
+size = Vector3(0.13, 0.164, 0.008)
+
+[node name="dvd" type="Area3D" unique_id=1659159201]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=141639013]
+transform = Transform3D(0.02, 0, 0, 0, 0.184, 0, 0, 0, 0.13, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4lids")
+mesh = SubResource("BoxMesh_0mieg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2091353282]
+shape = SubResource("BoxShape3D_0mieg")
+
+[node name="cover" type="Sprite3D" parent="." unique_id=108421585]
+transform = Transform3D(-8.7422775e-10, 0, 0.02, 0, 0.02, 0, -0.02, 0, -8.7422775e-10, 0.013, 0, 0)
+texture = ExtResource("1_31wla")
+
+[node name="spine" type="Label3D" parent="." unique_id=3945732]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0060715675, 0, 0.06699555)
+text = "Eraserhead"
+font = ExtResource("2_1nv6r")
+font_size = 5
+outline_size = 1

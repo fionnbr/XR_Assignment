@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://yqpdgs44cnmv"]
+
+[ext_resource type="Shader" uid="uid://bl6dka4tbgqpp" path="res://assets/wood.gdshader" id="1_8mfhg"]
+[ext_resource type="PackedScene" uid="uid://rs8qyy4yjwpy" path="res://hands/dvd.tscn" id="2_7gr3y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4lids"]
+render_priority = 0
+shader = ExtResource("1_8mfhg")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7x46j"]
+render_priority = 0
+shader = ExtResource("1_8mfhg")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pefxg"]
+render_priority = 0
+shader = ExtResource("1_8mfhg")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mieg"]
+render_priority = 0
+shader = ExtResource("1_8mfhg")
+shader_parameter/light_color = Color(0.9529412, 0.85882354, 0.7490196, 1)
+shader_parameter/dark_color = Color(0.7490196, 0.61960787, 0.49019608, 1)
+shader_parameter/ring_scale = 4.4
+shader_parameter/wave_scale = 8.454
+shader_parameter/random_scale = 4.6
+shader_parameter/noise_scale = 0.03
+
+[node name="bookcase" type="CSGBox3D" unique_id=629653525]
+transform = Transform3D(-0.0039466955, 0, -0.9999922, 0, 1, 0, 0.9999922, 0, -0.0039466955, 0, 0, 0)
+size = Vector3(1.08, 0.8, 0.28)
+material = SubResource("ShaderMaterial_4lids")
+
+[node name="shelf" type="CSGBox3D" parent="." unique_id=1777267565]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005156994, 0.2505157, 0.099993296)
+operation = 2
+size = Vector3(1, 0.2, 0.2)
+material = SubResource("ShaderMaterial_7x46j")
+
+[node name="dvd" parent="shelf" unique_id=1659159201 instance=ExtResource("2_7gr3y")]
+
+[node name="shelf2" type="CSGBox3D" parent="." unique_id=1158802345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+operation = 2
+size = Vector3(1, 0.2, 0.2)
+material = SubResource("ShaderMaterial_pefxg")
+
+[node name="shelf3" type="CSGBox3D" parent="." unique_id=788175680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0.1)
+operation = 2
+size = Vector3(1, 0.2, 0.2)
+material = SubResource("ShaderMaterial_0mieg")
